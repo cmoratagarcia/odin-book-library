@@ -14,6 +14,10 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+
+  let toggleRead = function () {
+    return !this.read;
+  };
 }
 
 function addBookToLibrary(book) {
@@ -49,6 +53,14 @@ function createBookCard(title, author, pages) {
   read.innerText = "Read?";
   card.appendChild(read);
   container.appendChild(card);
+
+  remove.addEventListener("click", () => {
+    alert("Deleted!");
+  });
+
+  read.addEventListener("click", () => {
+    alert("Read!");
+  });
 }
 
 newBook.addEventListener("click", () => {
