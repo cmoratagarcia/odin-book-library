@@ -23,18 +23,28 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
   container.innerHTML = "";
   for (let i = 0; i < myLibrary.length; i++) {
-    let card = document.createElement("div");
-    card.classList.add("card");
+    let bookTitle = myLibrary[i].title;
+    let bookAuthor = myLibrary[i].author;
+    let bookPages = myLibrary[i].pages;
 
-    let cardTitle = document.createElement("p");
-    cardTitle.innerText = myLibrary[i].title;
-    card.appendChild(cardTitle);
-    container.appendChild(card);
+    createBookCard(bookTitle, bookAuthor, bookPages);
   }
 }
 
-function createBookCard() {
+function createBookCard(title, author, pages) {
+  let card = document.createElement("div");
+  card.classList.add("card");
 
+  let cardTitle = document.createElement("p");
+  cardTitle.innerText = title;
+  card.appendChild(cardTitle);
+  let cardAuthor = document.createElement("p");
+  cardAuthor.innerText = author;
+  card.appendChild(cardAuthor);
+  let cardPages = document.createElement("p");
+  cardPages.innerText = pages;
+  card.appendChild(cardPages);
+  container.appendChild(card);
 }
 newBook.addEventListener("click", () => {
   dialog.showModal();
