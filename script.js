@@ -55,11 +55,11 @@ function createBookCard(title, author, pages) {
   container.appendChild(card);
 
   remove.addEventListener("click", () => {
-    alert("Deleted!");
+    remove.parentElement.innerHTML = "";
   });
 
   read.addEventListener("click", () => {
-    alert("Read!");
+    toggleRead();
   });
 }
 
