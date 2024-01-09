@@ -3,6 +3,11 @@ const container = document.querySelector(".container");
 const newBook = document.querySelector(".new-book");
 const dialog = document.querySelector("dialog");
 const submit = document.querySelector(".submit");
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+const yes = document.querySelector("#read-yes");
+const no = document.querySelector("#read-no");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -29,9 +34,14 @@ newBook.addEventListener("click", () => {
 });
 
 submit.addEventListener("click", () => {
-  alert("Hi!");
+  let readStatus;
+  if (yes.checked) {
+    readStatus = true;
+  } else {
+    readStatus = false;
+  }
+
+  let newBook = new Book(title.value, author.value, pages.value, readStatus);
+  addBookToLibrary(newBook);
+  console.log(myLibrary);
 });
-
-let hobbit = new Book("The Hobbit", "Tolkien", 500, true);
-
-console.log(hobbit.info());
