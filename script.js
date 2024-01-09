@@ -2,6 +2,7 @@ const myLibrary = [];
 const container = document.querySelector(".container");
 const newBook = document.querySelector(".new-book");
 const dialog = document.querySelector("dialog");
+const submit = document.querySelector(".submit");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -25,6 +26,10 @@ function addBookToLibrary(book) {
 
 newBook.addEventListener("click", () => {
   dialog.showModal();
+});
+
+submit.addEventListener("click", () => {
+  alert("Hi!");
 });
 
 let hobbit = new Book("The Hobbit", "Tolkien", 500, true);
