@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Admin Dashboard</title>
+    <title>Your Library</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
@@ -15,5 +15,48 @@
   <body>
     <div class="container"></div>
     <button class="new-book">NEW BOOK</button>
+
+    <dialog open>
+      <form method="dialog">
+        <h3>Add Book</h3>
+        <ol>
+          <li class="form-input">
+            <input
+              id="title"
+              name="title"
+              type="text"
+              placeholder="Title"
+              required
+              autofocus
+            />
+          </li>
+          <li class="form-input">
+            <input
+              id="author"
+              name="author"
+              type="text"
+              placeholder="Author"
+              required
+            />
+          </li>
+          <li class="form-input">
+            <input
+              id="pages"
+              name="pages"
+              type="number"
+              placeholder="Pages"
+              required
+            />
+          </li>
+          <li class="form-input">
+            <label for="read">Read?</label>
+            <input type="radio" id="read-yes" name="read" value="Yes">
+            <label for="Yes">Yes</label>
+            <input type="radio" id="read-no" name="read" value="No">
+            <label for="No">No</label>
+          </li>
+        <button>Submit</button>
+      </form>
+    </dialog>
   </body>
 </html>
