@@ -14,9 +14,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function () {
-    return `${this.title}, ${this.author}, ${this.pages}, ${this.read}`;
-  };
 }
 
 function addBookToLibrary(book) {
@@ -44,8 +41,16 @@ function createBookCard(title, author, pages) {
   let cardPages = document.createElement("p");
   cardPages.innerText = pages;
   card.appendChild(cardPages);
+
+  let remove = document.createElement("button");
+  remove.innerText = "Remove";
+  card.appendChild(remove);
+  let read = document.createElement("button");
+  read.innerText = "Read?";
+  card.appendChild(read);
   container.appendChild(card);
 }
+
 newBook.addEventListener("click", () => {
   dialog.showModal();
 });
