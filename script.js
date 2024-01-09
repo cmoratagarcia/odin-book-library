@@ -21,14 +21,21 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
-
+  container.innerHTML = "";
   for (let i = 0; i < myLibrary.length; i++) {
     let card = document.createElement("div");
-    container.appendChild(card);
     card.classList.add("card");
+
+    let cardTitle = document.createElement("p");
+    cardTitle.innerText = myLibrary[i].title;
+    card.appendChild(cardTitle);
+    container.appendChild(card);
   }
 }
 
+function createBookCard() {
+
+}
 newBook.addEventListener("click", () => {
   dialog.showModal();
 });
