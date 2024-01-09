@@ -16,7 +16,7 @@
     <div class="container"></div>
     <button class="new-book">NEW BOOK</button>
 
-    <dialog open>
+    <dialog>
       <form method="dialog">
         <h3>Add Book</h3>
         <ol>
@@ -49,12 +49,15 @@
             />
           </li>
           <li class="form-input">
-            <label for="read">Read?</label>
-            <input type="radio" id="read-yes" name="read" value="Yes">
-            <label for="Yes">Yes</label>
-            <input type="radio" id="read-no" name="read" value="No">
-            <label for="No">No</label>
+            <fieldset>
+              <legend>Read</legend>
+              <input type="radio" id="read-yes" name="read" value="Yes" />
+              <label for="read-yes">Yes</label>
+              <input type="radio" id="read-no" name="read" value="No" />
+              <label for="read-no">No</label>
+            </fieldset>
           </li>
+        </ol>
         <button>Submit</button>
       </form>
     </dialog>
