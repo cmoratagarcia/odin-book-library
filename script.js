@@ -24,18 +24,20 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
   container.innerHTML = "";
   for (let i = 0; i < myLibrary.length; i++) {
-    let bookTitle = myLibrary[i].title;
-    let bookAuthor = myLibrary[i].author;
-    let bookPages = myLibrary[i].pages;
-    let bookRead = myLibrary[i].read;
+    let titleValue = myLibrary[i].title;
+    let authorValue = myLibrary[i].author;
+    let pagesValue = myLibrary[i].pages;
+    let readValue = myLibrary[i].read;
+    let indexValue = i;
 
-    createBookCard(bookTitle, bookAuthor, bookPages, bookRead);
+    createBookCard(titleValue, authorValue, pagesValue, readValue, indexValue);
   }
 }
 
-function createBookCard(title, author, pages) {
+function createBookCard(title, author, pages, read, index) {
   let card = document.createElement("div");
   card.classList.add("card");
+  card.setAttribute("id", index);
 
   let cardTitle = document.createElement("p");
   cardTitle.innerText = title;
@@ -49,14 +51,14 @@ function createBookCard(title, author, pages) {
 
   let removeBtn = document.createElement("button");
   removeBtn.innerText = "Remove";
-  card.appendChild(remove);
+  card.appendChild(removeBtn);
   let readBtn = document.createElement("button");
   readBtn.innerText = "Read?";
-  card.appendChild(read);
+  card.appendChild(readBtn);
   container.appendChild(card);
 
   removeBtn.addEventListener("click", () => {
-    remove.parentElement.innerHTML = "";
+    removeBtn.parentElement.innerHTML = "";
   });
 
   readBtn.addEventListener("click", () => {
