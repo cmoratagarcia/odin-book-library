@@ -55,7 +55,7 @@ function createBookCard(title, author, pages, read, index) {
   removeBtn.innerText = "Remove";
   card.appendChild(removeBtn);
   let readBtn = document.createElement("button");
-  readBtn.innerText = "Read?";
+  readBtn.innerText = read ? "Read" : "Not read";
   card.appendChild(readBtn);
   container.appendChild(card);
 
