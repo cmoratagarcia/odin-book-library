@@ -82,11 +82,13 @@ closeDialog.addEventListener("click", () => {
   dialog.close();
 });
 
-submitBtn.addEventListener("click", () => {
-  let readStatus = yes.checked;
+submitBtn.addEventListener("click", (e) => {
+  if (form.checkValidity()) {
+    let readStatus = yes.checked;
 
-  let newBook = new Book(title.value, author.value, pages.value, readStatus);
-  addBookToLibrary(newBook);
-  extractArrayValues();
-  console.log(myLibrary);
+    let newBook = new Book(title.value, author.value, pages.value, readStatus);
+    addBookToLibrary(newBook);
+    extractArrayValues();
+    console.log(myLibrary);
+  }
 });
