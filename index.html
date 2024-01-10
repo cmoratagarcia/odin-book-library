@@ -20,12 +20,14 @@
     <div class="container"></div>
     <dialog>
       <form method="dialog" class="form">
-        <h3>Add Book</h3>
         <div class="close-dialog">X</div>
-        <ol>
+        <h3>Add Book</h3>
+
+        <ul>
           <li class="form-input">
             <input
               id="title"
+              class="text-input"
               name="title"
               type="text"
               placeholder="Title"
@@ -34,14 +36,26 @@
             />
           </li>
           <li class="form-input">
-            <input id="author" name="author" type="text" placeholder="Author" />
+            <input
+              id="author"
+              class="text-input"
+              name="author"
+              type="text"
+              placeholder="Author"
+            />
           </li>
           <li class="form-input">
-            <input id="pages" name="pages" type="number" placeholder="Pages" />
+            <input
+              id="pages"
+              class="text-input"
+              name="pages"
+              type="number"
+              placeholder="Pages"
+            />
           </li>
           <li class="form-input">
-            <fieldset>
-              <legend>Read</legend>
+            <fieldset class="radio-section">
+              <legend>Read?</legend>
               <input
                 type="radio"
                 id="read-yes"
@@ -54,10 +68,11 @@
               <label for="read-no">No</label>
             </fieldset>
           </li>
-        </ol>
+        </ul>
         <button class="submit">Submit</button>
       </form>
     </dialog>
+
     <button class="new-book">NEW BOOK</button>
   </body>
 </html>

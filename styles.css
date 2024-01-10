@@ -5,6 +5,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
 }
+
 h1, .new-book {
     background-color: #a299ad;
     color: white;
@@ -18,14 +19,14 @@ h1 {
 .container {
     background-color: #dcd9e0;
     display: grid;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1em;
 }
 
 button {
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    cursor: pointer;
     padding: 5px;
     min-width: 150px;
     font-size: 1em;
@@ -35,16 +36,52 @@ button {
 button:hover {
     transform: scale(1.05);
 }
+
 dialog {
+    width: 20%;
     background-color: #c5bfcc;
     border: none;
-    border-radius: 5px;
-    
+    border-radius: 15px;
+    padding: 20px;
+}
+.close-dialog {
+    cursor: pointer;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+ul {
+    padding: 0;
 }
 .form-input {
     list-style: none;
+    width: 95%;
+    margin: auto;
+    }
+
+.text-input {
+    background-color: #dcd9e0;
+    font-size: 1em;
+    border: none;
+    border-radius: 12px;
+    outline: 0;
+    padding: 4px 20px 0;
+    height: 50px;
+    margin: 5px 0;
+    width: 100%;
+ }
+.radio-section {
+    border: none;
+}
+.submit {
+    width: 10px;
 }
 
 .new-book {
     margin-top: 2vh;
+ 
 }
