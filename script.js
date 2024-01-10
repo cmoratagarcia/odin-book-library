@@ -1,8 +1,8 @@
 const myLibrary = [];
 const container = document.querySelector(".container");
-const newBook = document.querySelector(".new-book");
+const newBookBtn = document.querySelector(".new-book");
 const dialog = document.querySelector("dialog");
-const submit = document.querySelector(".submit");
+const submitBtn = document.querySelector(".submit");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
@@ -27,8 +27,9 @@ function addBookToLibrary(book) {
     let bookTitle = myLibrary[i].title;
     let bookAuthor = myLibrary[i].author;
     let bookPages = myLibrary[i].pages;
+    let bookRead = myLibrary[i].read;
 
-    createBookCard(bookTitle, bookAuthor, bookPages);
+    createBookCard(bookTitle, bookAuthor, bookPages, bookRead);
   }
 }
 
@@ -46,28 +47,28 @@ function createBookCard(title, author, pages) {
   cardPages.innerText = pages;
   card.appendChild(cardPages);
 
-  let remove = document.createElement("button");
-  remove.innerText = "Remove";
+  let removeBtn = document.createElement("button");
+  removeBtn.innerText = "Remove";
   card.appendChild(remove);
-  let read = document.createElement("button");
-  read.innerText = "Read?";
+  let readBtn = document.createElement("button");
+  readBtn.innerText = "Read?";
   card.appendChild(read);
   container.appendChild(card);
 
-  remove.addEventListener("click", () => {
+  removeBtn.addEventListener("click", () => {
     remove.parentElement.innerHTML = "";
   });
 
-  read.addEventListener("click", () => {
+  readBtn.addEventListener("click", () => {
     toggleRead();
   });
 }
 
-newBook.addEventListener("click", () => {
+newBookBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
-submit.addEventListener("click", () => {
+submitBtn.addEventListener("click", () => {
   let readStatus;
   if (yes.checked) {
     readStatus = true;
