@@ -6,7 +6,7 @@ body {
     font-size: 18px;
 }
 h1, .new-book {
-    background-color: #8d7d8e;
+    background-color: #a299ad;
     color: white;
 }
 
@@ -16,7 +16,7 @@ h1 {
     line-height: 8vh;
 }
 .container {
-    background-color: #c0b7c0;
+    background-color: #dcd9e0;
     display: grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -34,4 +34,17 @@ button {
 
 button:hover {
     transform: scale(1.05);
+}
+dialog {
+    background-color: #c5bfcc;
+    border: none;
+    border-radius: 5px;
+    
+}
+.form-input {
+    list-style: none;
+}
+
+.new-book {
+    margin-top: 2vh;
 }
