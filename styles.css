@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 :root {
@@ -25,9 +26,9 @@ h1 {
     line-height: 8vh;
 }
 .container {
-    background-color: var(--grey-text);
+    padding: 20px;;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1em;
 }
 
@@ -47,12 +48,14 @@ button:hover {
 }
 
 dialog {
+    margin: auto;
     width: 20%;
     background-color: var(--dark-grey);
     border: none;
     border-radius: 15px;
     padding: 20px;
 }
+
 .close-dialog {
     cursor: pointer;
     display: inline-block;
@@ -96,5 +99,21 @@ ul {
 
 .new-book {
     margin-top: 2vh;
- 
-}
+ }
+
+ .card {
+    color: white;
+    background-color: var(--dark-grey);
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+ }
+
+ .card button {
+   display: block;
+ }
+
+ .new-book {
+    display: block;
+    margin: 20px auto;
+ }
