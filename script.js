@@ -3,6 +3,7 @@ const container = document.querySelector(".container");
 const newBookBtn = document.querySelector(".new-book");
 const dialog = document.querySelector("dialog");
 const submitBtn = document.querySelector(".submit");
+const form = document.querySelector(".form");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
@@ -71,6 +72,7 @@ function createBookCard(title, author, pages, read, index) {
 }
 
 newBookBtn.addEventListener("click", () => {
+  form.reset();
   dialog.showModal();
 });
 
