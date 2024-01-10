@@ -22,6 +22,9 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
+}
+
+function extractArrayValues() {
   container.innerHTML = "";
   for (let i = 0; i < myLibrary.length; i++) {
     let titleValue = myLibrary[i].title;
@@ -33,7 +36,6 @@ function addBookToLibrary(book) {
     createBookCard(titleValue, authorValue, pagesValue, readValue, indexValue);
   }
 }
-
 function createBookCard(title, author, pages, read, index) {
   let card = document.createElement("div");
   card.classList.add("card");
@@ -58,7 +60,8 @@ function createBookCard(title, author, pages, read, index) {
   container.appendChild(card);
 
   removeBtn.addEventListener("click", () => {
-    removeBtn.parentElement.innerHTML = "";
+    myLibrary.splice(removeBtn.parentElement.id, 1);
+    extractArrayValues();
   });
 
   readBtn.addEventListener("click", () => {
@@ -80,5 +83,6 @@ submitBtn.addEventListener("click", () => {
 
   let newBook = new Book(title.value, author.value, pages.value, readStatus);
   addBookToLibrary(newBook);
+  extractArrayValues();
   console.log(myLibrary);
 });
