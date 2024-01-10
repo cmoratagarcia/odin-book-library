@@ -1,7 +1,15 @@
 * {
     box-sizing: border-box;
 }
+body {
+    font-family: 'Inter', sans-serif;
+}
+h1, .new-book {
+    background-color: #8d7d8e;
+    color: white;
+}
 .container {
+    background-color: #c0b7c0;
     display: grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
