@@ -67,7 +67,7 @@ function createBookCard(title, author, pages, read, index) {
   });
 
   readBtn.addEventListener("click", () => {
-    toggleRead();
+    toggleRead(read);
   });
 }
 
@@ -77,12 +77,7 @@ newBookBtn.addEventListener("click", () => {
 });
 
 submitBtn.addEventListener("click", () => {
-  let readStatus;
-  if (yes.checked) {
-    readStatus = true;
-  } else {
-    readStatus = false;
-  }
+  let readStatus = yes.checked;
 
   let newBook = new Book(title.value, author.value, pages.value, readStatus);
   addBookToLibrary(newBook);
