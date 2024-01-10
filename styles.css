@@ -3,10 +3,17 @@
 }
 body {
     font-family: 'Inter', sans-serif;
+    font-size: 18px;
 }
 h1, .new-book {
     background-color: #8d7d8e;
     color: white;
+}
+
+h1 {
+    height: 8vh;
+    text-align: center;
+    line-height: 8vh;
 }
 .container {
     background-color: #c0b7c0;
@@ -14,4 +21,17 @@ h1, .new-book {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1em;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 150px;
+    font-size: 1em;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+}
+
+button:hover {
+    transform: scale(1.05);
 }
