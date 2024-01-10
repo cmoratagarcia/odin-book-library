@@ -15,11 +15,11 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-
-  let toggleRead = function () {
-    return !this.read;
-  };
 }
+
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
@@ -67,7 +67,8 @@ function createBookCard(title, author, pages, read, index) {
   });
 
   readBtn.addEventListener("click", () => {
-    toggleRead(read);
+    myLibrary[index].toggleRead();
+    extractArrayValues();
   });
 }
 
