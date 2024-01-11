@@ -8,8 +8,13 @@ const form = document.querySelector(".form");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
-const yes = document.querySelector("#read-yes");
-const no = document.querySelector("#read-no");
+const readOption = document.querySelector(".read-option");
+const notReadOption = document.querySelector(".not-read-option");
+
+document.querySelector(".switch input").addEventListener("change", (e) => {
+  readOption.style.display = e.target.checked ? "block" : "none";
+  notReadOption.style.display = e.target.checked ? "none" : "block";
+});
 
 function Book(title, author, pages, read) {
   this.title = title;
