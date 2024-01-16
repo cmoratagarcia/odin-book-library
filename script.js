@@ -89,7 +89,7 @@ closeDialog.addEventListener("click", () => {
 
 submitBtn.addEventListener("click", (e) => {
   if (form.checkValidity()) {
-    let readStatus = yes.checked;
+    let readStatus = readOption.checked;
 
     let newBook = new Book(title.value, author.value, pages.value, readStatus);
     addBookToLibrary(newBook);

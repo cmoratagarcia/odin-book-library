@@ -132,12 +132,11 @@ ul {
   }
   
   .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+    display: none;
   }
   
   .slider {
+    border-radius: 34px;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -149,6 +148,7 @@ ul {
   }
   
   .slider:before {
+    border-radius: 50%;
     position: absolute;
     content: "";
     height: 26px;
@@ -160,7 +160,7 @@ ul {
   }
   
   input:checked+.slider {
-    background-color: green;
+    background-color: #66bb6a;
   }
   
   input:focus+.slider {
@@ -171,3 +171,6 @@ ul {
     transform: translateX(26px);
   }
   
+  .read-option {
+    display: none;
+  }
