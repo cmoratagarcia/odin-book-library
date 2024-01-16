@@ -62,10 +62,19 @@ function createBookCard(title, author, pages, read, index) {
   let removeBtn = document.createElement("button");
   removeBtn.innerText = "Remove";
   card.appendChild(removeBtn);
-  let readBtn = document.createElement("button");
-  readBtn.innerText = read ? "Not read" : "Read";
-  readBtn.style.backgroundColor = read ? "red" : "green";
-  card.appendChild(readBtn);
+  let readSlider = document.createElement("div");
+  readSlider.setAttribute("div", ".slider-section");
+  readSlider.innerHTML = `
+  <label class="switch">
+                <input type="checkbox" value="false"/>
+                <span class="slider"></span>
+              
+                </label>
+              <div class="read-option">Read</div>
+              <div class="not-read-option">Not Read</div>
+  `;
+
+  card.appendChild(readSlider);
   container.appendChild(card);
 
   removeBtn.addEventListener("click", () => {
@@ -73,7 +82,7 @@ function createBookCard(title, author, pages, read, index) {
     extractArrayValues();
   });
 
-  readBtn.addEventListener("click", () => {
+  readSlider.addEventListener("click", () => {
     myLibrary[index].toggleRead();
     extractArrayValues();
   });
