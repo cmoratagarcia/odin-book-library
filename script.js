@@ -12,11 +12,6 @@ const toggleSlider = document.querySelector(".switch input");
 const readOption = document.querySelector(".read-option");
 const notReadOption = document.querySelector(".not-read-option");
 
-toggleSlider.addEventListener("change", (e) => {
-  readOption.style.display = e.target.checked ? "block" : "none";
-  notReadOption.style.display = e.target.checked ? "none" : "block";
-});
-
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -31,6 +26,10 @@ Book.prototype.toggleRead = function () {
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
+toggleSlider.addEventListener("change", (e) => {
+  readOption.style.display = e.target.checked ? "block" : "none";
+  notReadOption.style.display = e.target.checked ? "none" : "block";
+});
 
 function extractArrayValues() {
   container.innerHTML = "";
@@ -44,6 +43,7 @@ function extractArrayValues() {
     createBookCard(titleValue, authorValue, pagesValue, readValue, indexValue);
   }
 }
+
 function createBookCard(title, author, pages, read, index) {
   let card = document.createElement("div");
   card.classList.add("card");
@@ -90,7 +90,7 @@ closeDialog.addEventListener("click", () => {
 
 submitBtn.addEventListener("click", (e) => {
   if (form.checkValidity()) {
-    let readStatus = readOption.checked;
+    let readStatus = toggleSlider.checked;
 
     let newBook = new Book(title.value, author.value, pages.value, readStatus);
     addBookToLibrary(newBook);
