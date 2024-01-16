@@ -8,10 +8,11 @@ const form = document.querySelector(".form");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
+const toggleSlider = document.querySelector(".switch input");
 const readOption = document.querySelector(".read-option");
 const notReadOption = document.querySelector(".not-read-option");
 
-document.querySelector(".switch input").addEventListener("change", (e) => {
+toggleSlider.addEventListener("change", (e) => {
   readOption.style.display = e.target.checked ? "block" : "none";
   notReadOption.style.display = e.target.checked ? "none" : "block";
 });
