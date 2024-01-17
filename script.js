@@ -60,15 +60,6 @@ function createBookCard(title, author, pages, read, index) {
   cardPages.innerText = `Pages: ${pages}`;
   card.appendChild(cardPages);
 
-  let removeBtn = document.createElement("button");
-  removeBtn.innerText = "Remove";
-  card.appendChild(removeBtn);
-
-  removeBtn.addEventListener("click", () => {
-    myLibrary.splice(index, 1);
-    extractArrayValues();
-  });
-
   let cardSliderSection = document.createElement("div");
   cardSliderSection.classList.add("slider-section");
   cardSliderSection.innerHTML = `
@@ -90,13 +81,19 @@ function createBookCard(title, author, pages, read, index) {
     const cardReadOption = card.querySelector(`#read-${index}`);
     const cardNotReadOption = card.querySelector(`#not-read-${index}`);
 
-    console.log(cardReadOption, cardNotReadOption);
-
     cardReadOption.style.display = cardSlider.checked ? "block" : "none";
     cardNotReadOption.style.display = cardSlider.checked ? "none" : "block";
 
-    // myLibrary[index].toggleRead();
-    // extractArrayValues();
+    myLibrary[index].toggleRead();
+  });
+
+  let removeBtn = document.createElement("button");
+  removeBtn.innerText = "Remove";
+  card.appendChild(removeBtn);
+
+  removeBtn.addEventListener("click", () => {
+    myLibrary.splice(index, 1);
+    extractArrayValues();
   });
 }
 
@@ -116,6 +113,5 @@ submitBtn.addEventListener("click", (e) => {
     let newBook = new Book(title.value, author.value, pages.value, readStatus);
     addBookToLibrary(newBook);
     extractArrayValues();
-    console.log(myLibrary);
   }
 });
