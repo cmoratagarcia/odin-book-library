@@ -49,12 +49,17 @@ function createBookCard(title, author, pages, read, index) {
   card.setAttribute("id", index);
 
   let cardTitle = document.createElement("p");
+  cardTitle.classList.add("card-title");
   cardTitle.innerText = `Title: ${title}`;
   card.appendChild(cardTitle);
+
   let cardAuthor = document.createElement("p");
+  cardAuthor.classList.add("card-author");
   cardAuthor.innerText = `Author: ${author}`;
   card.appendChild(cardAuthor);
+
   let cardPages = document.createElement("p");
+  cardPages.classList.add("card-pages");
   cardPages.innerText = `Pages: ${pages}`;
   card.appendChild(cardPages);
 
