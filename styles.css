@@ -72,6 +72,7 @@ h3 {
 ul {
     padding: 0;
 }
+
 .form-input {
     list-style: none;
     width: 95%;
@@ -90,6 +91,7 @@ ul {
     margin: 5px 0;
     width: 100%;
  }
+
 .slider-section {
     border: none;
     display: flex;
@@ -159,12 +161,12 @@ ul {
     transition: .4s;
   }
   
-  input:checked+.slider, .slider-checked {
+  input:checked+.slider {
     background-color: #66bb6a;
   }
   
  
-  input:checked+.slider:before, .slider-checked {
+  input:checked+.slider:before {
     transform: translateX(26px);
   }
   
