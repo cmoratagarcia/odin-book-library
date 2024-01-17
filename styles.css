@@ -15,16 +15,19 @@ body {
     font-size: 18px;
 }
 
-h1, .new-book {
-    background-color: var(--dark-grey);
+h1 {
     color: white;
+   margin-left: auto;
 }
 
-h1 {
-    height: 8vh;
-    text-align: center;
-    line-height: 8vh;
+header {
+    height: 9vh;
+    background-color: var(--dark-grey);
+    display: flex;
+    align-items: center;
+    padding: 40px;
 }
+
 .container {
     padding: 20px;;
     display: grid;
@@ -101,10 +104,6 @@ ul {
     width: 10px;
 }
 
-.new-book {
-    margin-top: 2vh;
- }
-
  .card {
     color: white;
     background-color: var(--dark-grey);
@@ -122,8 +121,7 @@ ul {
  }
 
  .new-book {
-    display: block;
-    margin: 20px auto;
+    margin-left: auto;
  }
 
  .switch {
