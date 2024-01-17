@@ -10,7 +10,6 @@ const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
 const toggleSlider = document.querySelector(".switch input");
 const readOption = document.querySelector(".read-option");
-const notReadOption = document.querySelector(".not-read-option");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -28,8 +27,7 @@ function addBookToLibrary(book) {
 }
 
 toggleSlider.addEventListener("change", (e) => {
-  readOption.style.display = e.target.checked ? "block" : "none";
-  notReadOption.style.display = e.target.checked ? "none" : "block";
+  readOption.innerText = e.target.checked ? "Read" : "Not Read";
 });
 
 function extractArrayValues() {
@@ -68,23 +66,19 @@ function createBookCard(title, author, pages, read, index) {
         <span class="slider"></span>
       </label>
 
-      <div class="read-option" id="read-${index}">Read</div>
-      <div class="not-read-option" id="not-read-${index}">Not Read</div>
+      <div class="read-option" id="read-${index}" ></div>
   `;
 
   card.appendChild(cardSliderSection);
   container.appendChild(card);
 
   let cardSlider = card.querySelector(`#slider-${index}`);
+  const cardReadOption = card.querySelector(`#read-${index}`);
+  cardReadOption.innerText = myLibrary[index].read ? "Not Read" : "Read";
 
   cardSlider.addEventListener("change", () => {
-    const cardReadOption = card.querySelector(`#read-${index}`);
-    const cardNotReadOption = card.querySelector(`#not-read-${index}`);
-
-    cardReadOption.style.display = cardSlider.checked ? "block" : "none";
-    cardNotReadOption.style.display = cardSlider.checked ? "none" : "block";
-
     myLibrary[index].toggleRead();
+    cardReadOption.innerText = myLibrary[index].read ? "Not Read" : "Read";
   });
 
   let removeBtn = document.createElement("button");

@@ -159,20 +159,16 @@ ul {
     transition: .4s;
   }
   
-  input:checked+.slider {
+  input:checked+.slider, .slider-checked {
     background-color: #66bb6a;
   }
   
  
-  input:checked+.slider:before {
+  input:checked+.slider:before, .slider-checked {
     transform: translateX(26px);
   }
   
-  .read-option {
-    display: none;
-  
-  }
-
- .read-option, .not-read-option {
+ 
+ .read-option {
     margin: 5px 15px;
   }
