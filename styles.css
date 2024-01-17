@@ -40,10 +40,10 @@ button {
     border-radius: 10px;
     cursor: pointer;
     padding: 5px;
-    min-width: 150px;
+    min-width: 160px;
     height: 50px;
     font-size: 1em;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) */
 }
 
 button:hover {
@@ -59,10 +59,12 @@ dialog {
     padding: 20px;
 }
 
+
 .close-dialog {
     cursor: pointer;
     display: inline-block;
     color: white;
+    margin-left: auto;
 }
 
 h3 {
@@ -75,10 +77,13 @@ h3 {
 ul {
     padding: 0;
 }
-
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .form-input {
     list-style: none;
-    width: 95%;
     margin: auto;
     }
 
@@ -96,14 +101,15 @@ ul {
  }
 
 .slider-section {
+    margin: 15px 0;
     border: none;
     display: flex;
     color: white;
 }
 .submit {
-    width: 10px;
+    width: 80%;
+    margin: 15px
 }
-
  .card {
     color: white;
     background-color: var(--dark-grey);
