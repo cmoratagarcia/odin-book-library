@@ -73,11 +73,12 @@ function createBookCard(title, author, pages, read, index) {
         <span class="slider"></span>
       </label>
 
-      <div class="read-option" id="read-${index}" ></div>
+      <div class="read-option ${
+        read ? "" : "unread"
+      }" id="read-${index}" ></div>
       </div>
       <button class="remove-button"><i class="fa-solid fa-trash"></i></button>
- 
-      `;
+       `;
 
   card.appendChild(bottomCardSection);
   container.appendChild(card);
@@ -89,6 +90,7 @@ function createBookCard(title, author, pages, read, index) {
   cardSlider.addEventListener("change", () => {
     myLibrary[index].toggleRead();
     cardReadOption.innerText = myLibrary[index].read ? "Read" : "Not Read";
+    cardReadOption.classList.toggle("unread", !myLibrary[index].read);
   });
 
   let removeBtn = card.querySelector(".remove-button");
