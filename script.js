@@ -64,33 +64,32 @@ function createBookCard(title, author, pages, read, index) {
   cardPages.innerText = `Pages: ${pages}`;
   card.appendChild(cardPages);
 
-  let cardSliderSection = document.createElement("div");
-  cardSliderSection.classList.add("slider-section");
-  cardSliderSection.innerHTML = `
+  let bottomCardSection = document.createElement("div");
+  bottomCardSection.classList.add("slider-section");
+  bottomCardSection.innerHTML = `
       <label class="switch">
         <input type="checkbox" id="slider-${index}" ${read ? "checked" : ""} />
         <span class="slider"></span>
       </label>
 
       <div class="read-option" id="read-${index}" ></div>
+
+      <button class="remove-button">Remove</button>
   `;
 
-  card.appendChild(cardSliderSection);
+  card.appendChild(bottomCardSection);
   container.appendChild(card);
 
   let cardSlider = card.querySelector(`#slider-${index}`);
   const cardReadOption = card.querySelector(`#read-${index}`);
-  cardReadOption.innerText = myLibrary[index].read ? "Not Read" : "Read";
+  cardReadOption.innerText = myLibrary[index].read ? "Read" : "Not Read";
 
   cardSlider.addEventListener("change", () => {
     myLibrary[index].toggleRead();
-    cardReadOption.innerText = myLibrary[index].read ? "Not Read" : "Read";
+    cardReadOption.innerText = myLibrary[index].read ? "Read" : "Not Read";
   });
 
-  let removeBtn = document.createElement("button");
-  removeBtn.innerText = "Remove";
-  card.appendChild(removeBtn);
-
+  let removeBtn = document.getElementById(".remove-button");
   removeBtn.addEventListener("click", () => {
     myLibrary.splice(index, 1);
     extractArrayValues();
