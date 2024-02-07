@@ -120,5 +120,6 @@ submitBtn.addEventListener("click", (e) => {
     let newBook = new Book(title.value, author.value, pages.value, readStatus);
     addBookToLibrary(newBook);
     extractArrayValues();
+    readStatusToggle.checked = false;
   }
 });
