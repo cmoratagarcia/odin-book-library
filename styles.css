@@ -51,7 +51,7 @@ button:hover {
 
 dialog {
     margin: 100px auto;
-    width: 30%;
+    min-width: 30%;
     background-color: var(--dark-grey);
     border: none;
     border-radius: 15px;
