@@ -50,14 +50,18 @@ button:hover {
 }
 
 dialog {
-    margin: auto;
-    width: 20%;
+    margin: 100px auto;
+    width: 30%;
     background-color: var(--dark-grey);
     border: none;
     border-radius: 15px;
     padding: 20px;
 }
 
+dialog::backdrop {
+    background-color: white;
+    opacity: 85%;
+  }
 
 .close-dialog {
     cursor: pointer;
@@ -75,6 +79,7 @@ h3 {
 
 ul {
     padding: 0;
+    width: 80%;
 }
 .form {
     display: flex;
