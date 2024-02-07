@@ -105,6 +105,11 @@ ul {
     display: flex;
     color: white;
 }
+
+.unread {
+    color:rgb(143, 140, 140);
+}
+
 .submit {
     width: 80%;
     margin: 15px

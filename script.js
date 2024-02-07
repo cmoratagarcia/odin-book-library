@@ -28,6 +28,7 @@ function addBookToLibrary(book) {
 
 toggleSlider.addEventListener("change", (e) => {
   readOption.innerText = e.target.checked ? "Read" : "Not Read";
+  readOption.classList.toggle("unread", !e.target.checked);
 });
 
 function extractArrayValues() {
