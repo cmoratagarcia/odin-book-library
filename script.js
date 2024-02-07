@@ -106,6 +106,8 @@ function removeBook(index) {
 
 newBookBtn.addEventListener("click", () => {
   form.reset();
+  readOption.innerText = "Not Read";
+  readOption.classList.add("unread");
   dialog.showModal();
 });
 
@@ -120,6 +122,5 @@ submitBtn.addEventListener("click", (e) => {
     let newBook = new Book(title.value, author.value, pages.value, readStatus);
     addBookToLibrary(newBook);
     extractArrayValues();
-    readStatusToggle.checked = false;
   }
 });
