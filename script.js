@@ -65,17 +65,19 @@ function createBookCard(title, author, pages, read, index) {
   card.appendChild(cardPages);
 
   let bottomCardSection = document.createElement("div");
-  bottomCardSection.classList.add("slider-section");
+  bottomCardSection.classList.add("bottom-section");
   bottomCardSection.innerHTML = `
+  <div class="slider-section">
       <label class="switch">
         <input type="checkbox" id="slider-${index}" ${read ? "checked" : ""} />
         <span class="slider"></span>
       </label>
 
       <div class="read-option" id="read-${index}" ></div>
-
-      <button class="remove-button">Remove</button>
-  `;
+      </div>
+      <button class="remove-button"><i class="fa-solid fa-trash"></i></button>
+ 
+      `;
 
   card.appendChild(bottomCardSection);
   container.appendChild(card);
@@ -89,7 +91,7 @@ function createBookCard(title, author, pages, read, index) {
     cardReadOption.innerText = myLibrary[index].read ? "Read" : "Not Read";
   });
 
-  let removeBtn = document.getElementById(".remove-button");
+  let removeBtn = card.querySelector(".remove-button");
   removeBtn.addEventListener("click", () => {
     myLibrary.splice(index, 1);
     extractArrayValues();
