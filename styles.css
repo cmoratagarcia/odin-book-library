@@ -191,8 +191,8 @@ ul {
   }
   
  
- .read-option {
-    margin: 5px 15px;
+ .read-option, .read-selection {
+    margin: 5px 10px;
   }
 
   .remove-button {

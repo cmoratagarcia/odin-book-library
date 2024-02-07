@@ -8,7 +8,7 @@ const form = document.querySelector(".form");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
-const readStatusToggle = document.querySelector(".switch input");
+const readStatusToggle = document.querySelector(".modal-toggle");
 const readOption = document.querySelector(".read-option");
 
 function Book(title, author, pages, read) {
@@ -58,7 +58,7 @@ function createBookCard(book, index) {
   cardPages.innerText = `Pages: ${book.pages}`;
   card.appendChild(cardPages);
 
-  let bottomCardSection = document.createElement("div");
+  const bottomCardSection = document.createElement("div");
   bottomCardSection.classList.add("bottom-section");
   bottomCardSection.innerHTML = `
   <div class="slider-section">
@@ -69,7 +69,7 @@ function createBookCard(book, index) {
         <span class="slider"></span>
       </label>
 
-      <div class="read-option ${
+      <div class="read-selection ${
         book.read ? "" : "unread"
       }" id="read-${index}" ></div>
       </div>
@@ -81,6 +81,13 @@ function createBookCard(book, index) {
 
   const cardSlider = card.querySelector(`#slider-${index}`);
   const cardReadOption = card.querySelector(`#read-${index}`);
+  cardReadOption.innerText = book.read ? "Read" : "Not Read";
+
+  function updateReadStatus(book, cardReadOption) {
+    book.toggleRead();
+    cardReadOption.innerText = book.read ? "Read" : "Not Read";
+    cardReadOption.classList.toggle("unread", !book.read);
+  }
 
   cardSlider.addEventListener("change", () => {
     updateReadStatus(book, cardReadOption);
@@ -90,12 +97,6 @@ function createBookCard(book, index) {
   removeBtn.addEventListener("click", () => {
     removeBook(index);
   });
-}
-
-function updateReadStatus(book, cardReadOption) {
-  book.toggleRead();
-  cardReadOption.innerText = book.read ? "Read" : "Not Read";
-  cardReadOption.classList.toggle("unread", !book.read);
 }
 
 function removeBook(index) {
