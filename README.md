@@ -1,5 +1,5 @@
-# odin-book-library
+# odin-book-library-classes
 
-First project of the Full Stack JavaScript course.
+Part of the Odin Project lesson on JS classes.
 
-Practice JS Objects by creating a library app with the option to add and remove books from an array and display them on the page.
+Assignment: Go back to your Library project and refactor it to use class instead of plain constructors.
